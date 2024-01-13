@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmfykqxcl73rf"]
 
 [ext_resource type="PackedScene" uid="uid://qhraac51uxva" path="res://nodes/player.tscn" id="1_t6i5m"]
-[ext_resource type="PackedScene" uid="uid://0qxu7ql2yqsb" path="res://nodes/pipe.tscn" id="2_qdtp8"]
+[ext_resource type="PackedScene" uid="uid://n00codtc841" path="res://nodes/pipe_controller.tscn" id="2_cla6o"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,4 +10,4 @@
 [node name="Player" parent="." instance=ExtResource("1_t6i5m")]
 position = Vector2(-470, 0)
 
-[node name="Pipe" parent="." instance=ExtResource("2_qdtp8")]
+[node name="PipeController" parent="." instance=ExtResource("2_cla6o")]
