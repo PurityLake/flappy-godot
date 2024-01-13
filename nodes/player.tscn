@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://qhraac51uxva"]
+
+[ext_resource type="Texture2D" uid="uid://cvhiw0egdfypj" path="res://sprites/animations/flappy/frame-1.png" id="1_6pf3q"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_7wkab"]
+[ext_resource type="Texture2D" uid="uid://b235rk1nv0w45" path="res://sprites/animations/flappy/frame-2.png" id="2_hj3ny"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_argqo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6pf3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hj3ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_6pf3q")
+}],
+"loop": false,
+"name": &"flap",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fklqc"]
+radius = 29.0
+height = 86.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_7wkab")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_argqo")
+animation = &"flap"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fklqc")
